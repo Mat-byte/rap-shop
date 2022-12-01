@@ -8,7 +8,7 @@ Hi there, this is Mateo Cano / Medellín (Colombia).
   Mateo Cano
 </a><br>
 
-This repository was created with the purpose of learn about ABAP RESTful Programming Model . 
+This repository was created with the purpose of learning about ABAP RESTful Programming Model . 
 
 ## Repository Information
 
