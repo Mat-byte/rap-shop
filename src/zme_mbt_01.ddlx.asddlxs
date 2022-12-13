@@ -1,0 +1,34 @@
+@Metadata.layer: #CORE
+@UI: { headerInfo: {
+    typeName: 'Products',
+    typeNamePlural: 'Products',
+    title: {
+        type: #STANDARD,
+        label: 'Product',
+        value: 'Id' } },
+    presentationVariant: [{ sortOrder: [{ by: 'Id', direction: #ASC }] }] }
+annotate view ZC_MTB_01 with
+{
+  @UI.facet: [{
+      id: 'Product',
+      purpose: #STANDARD,
+      position: 10,
+      label: 'Product',
+      type: #IDENTIFICATION_REFERENCE }]
+
+  @UI:{ lineItem: [{ position: 10, label: 'Id' }] }
+  Id;
+  @UI:{ lineItem: [{ position: 20, label: 'Product Name' }],
+        selectionField: [{ position: 10 }] }
+  Prdname;
+  @UI:{ lineItem: [{ position: 30, label: 'Category' }],
+        selectionField: [{ position: 20 }] }
+  Category;
+  @UI:{ lineItem: [{ position: 40, label: 'Valid Product' }] }
+  Valid;
+  @UI:{ lineItem: [{ position: 50, label: 'Expiration Date' }] }
+  ExpirationDate;
+  @UI:{ hidden: true }
+  ExpirationDays;
+  
+}

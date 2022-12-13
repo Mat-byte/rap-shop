@@ -1,13 +1,41 @@
 managed implementation in class zbp_i_mtb_01 unique;
 strict ( 2 );
 
-define behavior for ZI_MTB_01 //alias <alias_name>
-persistent table ZMBTT_01
+define behavior for ZI_MTB_01 alias Products
+persistent table zmbtt_01
 lock master
 authorization master ( instance )
-//etag master <field_name>
+etag master LastChangedAt
 {
   create;
   update;
   delete;
+
+  field ( numbering : managed, readonly ) Id;
+  field ( readonly ) Valid;
+  field ( readonly ) LastChangedAt, LastChangedBy;
+
+  /*Set valid boolean condition*/
+  action ( features : instance ) setValid result [1] $self;
+
+  /*Determine the expiration days */
+  determination determineExpDays on modify { field ExpirationDate; }
+
+  /* Validate Key Fields */
+  validation validateKeyFiels on save { create; }
+
+  /*Validate the product expiration date.
+    It is valid when the expiration date is greater than 60 days compared to the start date. */
+  validation validateExpDate on save { field ExpirationDate; create; }
+
+  mapping for zmbtt_01
+  {
+
+    Id = id;
+    Prdname = prdname;
+    Category = category;
+    Valid = valid;
+    ExpirationDate = expdate;
+
+  }
 }

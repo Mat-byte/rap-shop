@@ -8,7 +8,8 @@ define root view entity ZI_MTB_01
       prdname  as Prdname,
       category as Category,
       valid    as Valid,
-      expdate  as Expdate,
+      expdate  as ExpirationDate,
+      expdays  as ExpirationDays,
       @Semantics.user.createdBy: true
       created_by as CreatedBy,
       @Semantics.systemDateTime.createdAt: true

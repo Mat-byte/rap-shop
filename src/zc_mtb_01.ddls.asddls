@@ -9,6 +9,7 @@ define root view entity ZC_MTB_01 provider contract transactional_interface
       Prdname,
       Category,
       Valid,
-      Expdate
+      ExpirationDate,
+      ExpirationDays
 
 }
