@@ -1,15 +1,5 @@
-class ZBP_I_MTB_01 definition
-  public
-  abstract
-  final
-  create public .
-
-public section.
-protected section.
-private section.
+CLASS zbp_i_mtb_01 DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_mtb_01.
 ENDCLASS.
 
-
-
-CLASS ZBP_I_MTB_01 IMPLEMENTATION.
+CLASS zbp_i_mtb_01 IMPLEMENTATION.
 ENDCLASS.

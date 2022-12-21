@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for Products'
+define service ZUI_C_MTB_01 {
+  expose ZC_MTB_01 as Products;
+}
