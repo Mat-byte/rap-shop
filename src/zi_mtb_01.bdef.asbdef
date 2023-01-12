@@ -1,9 +1,11 @@
 managed implementation in class zbp_i_mtb_01 unique;
 strict ( 2 );
+with draft;
 
 define behavior for ZI_MTB_01 alias Products
 persistent table zmbtt_01
-lock master
+draft table zmbdr_01
+lock master total etag LastChangedAt
 authorization master ( instance )
 etag master LastChangedAt
 {
@@ -14,6 +16,18 @@ etag master LastChangedAt
   field ( numbering : managed, readonly ) Id;
   field ( readonly ) Valid;
   field ( readonly ) LastChangedAt, LastChangedBy;
+
+  /* Draft Implementation*/
+
+  draft action Resume;
+
+  draft action Edit;
+
+  draft action Activate;
+
+  draft action Discard;
+
+  draft determine action Prepare;
 
   /*Set valid boolean condition*/
   action ( features : instance ) setValid result [1] $self;
